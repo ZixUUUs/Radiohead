@@ -6,7 +6,27 @@
     <title>Radiohead</title>
     <link rel="stylesheet" href="/css/Home.css" />
   </head>
+
   <body>
-    <header><h1>Radiohead Albums Inventory</h1></header>
+    <header>
+      <h1>Radiohead Albums Inventory</h1>
+    </header>
+    <section class="Albums">
+      <div class="grid-container">
+        <% if (albums.length != 0){%> <% albums.forEach(album => {%>
+        <div class="album-container-box">
+          <div class="img-container">
+            <img src="<%= album.picture %>" alt="Album-Cover" />
+          </div>
+          <div class="title">
+            <h2><%= album.title %></h2>
+          </div>
+          <div class="track-number">
+            <h3>Songs: <%= album.sumtracks %></h3>
+          </div>
+        </div>
+        <% })};%>
+      </div>
+    </section>
   </body>
 </html>

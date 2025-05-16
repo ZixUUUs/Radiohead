@@ -24,4 +24,23 @@ const addAlbums = async (title, picture, sumTracks) => {
     return null;
   }
 };
-module.exports = { getAlbums, addAlbums };
+
+const checkAlbums = async (title, picture, sumTracks) => {
+  try {
+    let check = await myClient.query(
+      `SELECT * FROM radiohead WHERE "title" = $1`,
+      [title]
+    );
+    if (check.rows.length === 0) {
+      await addAlbums(title, picture, sumTracks);
+      return true;
+    } else {
+      console.log("default existe next...");
+      return false;
+    }
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+};
+module.exports = { getAlbums, addAlbums, checkAlbums };
