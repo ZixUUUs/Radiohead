@@ -23,7 +23,7 @@ header h1 {
   font-weight: 500;
 }
 section {
-  padding: 80px 0 0 0;
+  padding: 80px 0 80px 0;
   display: flex;
   height: max-content;
   max-width: 1600px;
@@ -34,6 +34,7 @@ section {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
 }
 .album-container-box {
   place-self: anchor-center;
@@ -79,5 +80,155 @@ section {
   text-align: start;
   font-family: "Rubik", sans-serif;
   font-weight: 300;
+  font-size: medium;
+}
+/*Forms css*/
+.allForms {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.getBtn {
+  width: 200px;
+  height: 48px;
+}
+.addBtn {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 100px;
+  border: none;
+  color: #ffffff;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: medium;
+  text-transform: uppercase;
+  background-color: rgb(46, 101, 172);
+  box-shadow: 1px 18px 29px -10px rgba(8, 58, 105, 0.75);
+  -webkit-box-shadow: 1px 18px 29px -10px rgba(8, 58, 105, 0.75);
+  -moz-box-shadow: 1px 18px 29px -10px rgba(8, 58, 105, 0.75);
+  transition: all ease-in-out 0.3s;
+}
+.addBtn:hover {
+  transform: translateY(-5px);
+  border-bottom: 5px solid rgb(52, 177, 226);
+  box-shadow: 1px 24px 29px -10px rgba(8, 58, 105, 0.81);
+  -webkit-box-shadow: 1px 24px 29px -10px rgba(8, 58, 105, 0.81);
+  -moz-box-shadow: 1px 24px 29px -10px rgba(8, 58, 105, 0.81);
+}
+.add-album-form {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  padding: 10px;
+  background-color: #00000031;
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+}
+.add-album-form > h2 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: medium;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+.add-album-form > form {
+  height: 180px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 8px;
+}
+.add-album-form > form > input {
+  width: 90%;
+  height: 32px;
+  border: none;
+  border-radius: 100px;
+  padding: 5px 10px 5px 10px;
+  background-color: #c3dfffd0;
+  transition: all ease-in-out 0.3s;
+}
+.add-album-form > form > input::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: #112a46;
+}
+.add-album-form > form > input:hover {
+  transform: translateY(-3px);
+  background-color: #ffffff;
+  border: 2px solid rgb(46, 101, 172);
+}
+.add-album-form > form > input:focus {
+  border: none;
+}
+.add-album-form > form > input:hover::placeholder {
+  color: #000;
+}
+.add-album-form > form > button {
+  width: 90%;
+  height: 38px;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: medium;
+  text-transform: uppercase;
+  background-color: #2e65ac;
+  background-color: rgb(46, 101, 172);
+  box-shadow: 1px 18px 29px -10px rgba(8, 58, 105, 0.75);
+  -webkit-box-shadow: 1px 18px 29px -10px rgba(8, 58, 105, 0.75);
+  -moz-box-shadow: 1px 18px 29px -10px rgba(8, 58, 105, 0.75);
+  transition: all ease-in-out 0.3s;
+}
+.add-album-form > form > button:hover {
+  transform: translateY(-5px);
+  border-bottom: 5px solid rgb(52, 177, 226);
+  box-shadow: 1px 24px 29px -10px rgba(8, 58, 105, 0.81);
+  -webkit-box-shadow: 1px 24px 29px -10px rgba(8, 58, 105, 0.81);
+  -moz-box-shadow: 1px 24px 29px -10px rgba(8, 58, 105, 0.81);
+}
+/*overlay*/
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+}
+/*footer*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.596);
+  box-shadow: 0px -7px 53px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px -7px 53px -7px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px -7px 53px -7px rgba(0, 0, 0, 0.75);
+}
+footer h6 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 200;
   font-size: medium;
 }

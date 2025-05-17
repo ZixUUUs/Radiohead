@@ -2,7 +2,7 @@ const myClient = require("../Data-base/db");
 const Albums = require("../models/Albums");
 const addAlbums = Albums.addAlbums;
 const getAlbums = Albums.getAlbums;
-
+const checkOrAdd = Albums.checkAlbums;
 myClient.connect();
 
 const defaultAlbums = async () => {
@@ -42,4 +42,4 @@ const getAllAlbums = async () => {
     return null;
   }
 };
-module.exports = { defaultAlbums, getAllAlbums };
+module.exports = { defaultAlbums, getAllAlbums, addAlbums, checkOrAdd };

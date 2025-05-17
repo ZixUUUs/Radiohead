@@ -8,9 +8,31 @@
   </head>
 
   <body>
+    <div class="overlay"></div>
     <header>
       <h1>Radiohead Albums Inventory</h1>
     </header>
+
+    <div class="allForms">
+      <div class="getBtn">
+        <button class="addBtn">add album</button>
+      </div>
+      <div class="add-album-form">
+        <h2>Add a new album of Radiohead</h2>
+        <form action="/add-album" method="post">
+          <input type="text" name="title" placeholder="Album-Name " />
+          <input type="text" name="picture" placeholder="Picture link" />
+          <input
+            type="number"
+            name="sumtracks"
+            minlength="8"
+            maxlength="20"
+            placeholder="Number of Tracks"
+          />
+          <button class="close">add</button>
+        </form>
+      </div>
+    </div>
     <section class="Albums">
       <div class="grid-container">
         <% if (albums.length != 0){%> <% albums.forEach(album => {%>
@@ -28,5 +50,7 @@
         <% })};%>
       </div>
     </section>
+    <footer><h6>Zixuuus,The Odin Project</h6></footer>
+    <script src="/javascript/Main.js" defer></script>
   </body>
 </html>
